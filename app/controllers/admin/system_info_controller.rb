@@ -57,7 +57,7 @@ class Admin::SystemInfoController < ApplicationController
 
   # GET /admin/system_info
   def index
-    @title = '系统信息'
+    @title = t('menu.enviroments')
     @booted_at = Rails.application.config.booted_at
 
     set_cpus

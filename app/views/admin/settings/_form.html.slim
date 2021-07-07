@@ -12,7 +12,7 @@ ruby:
         .card-body
           = f.error_notification
           - if type == :boolean
-            = f.input :value, label: '开启', as: :boolean, checked: true
+            = f.input :value, label: t('admin.settings.enable'), as: :boolean, checked: true
           - elsif type == :hash
             = f.text_area :value, value: JSON.pretty_generate(value), class: 'form-control', rows: 15
           - else

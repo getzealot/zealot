@@ -8,35 +8,35 @@
   .col-md-6
     .card.system_info
       .card-header
-        h3.card-title 服务器信息
+        h3.card-title = t('admin.system_info.server_info')
       .card-body
         dl.system-info
-          dt Zealot 版本
+          dt = t('admin.system_info.zealot_version')
           dd
             pre
               - if @version[:update_available]
                 a.new-version.float-right href="#{@version[:release_link]}" target="_blank"
                   i.fas.fa-rainbow
-                  | 发现新版本: #{@version[:latest_version]}
+                  = t('admin.system_info.found_new_version', version: @version[:latest_version])
               = @version[:current_version]
-          dt Ruby 版本
+          dt = t('admin.system_info.ruby_version')
           dd
             pre = RUBY_DESCRIPTION
-          dt CPU
+          dt = t('admin.system_info.cpu_info')
           dd
             pre
               - if @cpus
-                = "#{@cpus.length} 核"
+                = t('admin.system_info.cpu_core', size: @cpus.length)
               - else
-                | CPU 信息监测失败
-          dt 内存
+                = t('admin.system_info.fail_detect_cpu')
+          dt = t('admin.system_info.memory_info')
           dd
             pre
               - if @memory
                 = "#{number_to_human_size(@memory.active_bytes)} / #{number_to_human_size(@memory.total_bytes)}"
               - else
-                | 内存信息监测失败
-          dt 运行时间
+                = t('admin.system_info.fail_detect_memory')
+          dt = t('admin.system_info.lauched_time')
           dd
             pre
               = distance_of_time_in_words_to_now(@booted_at)
@@ -45,7 +45,7 @@
               | )
     .card
       .card-header
-        h3.card-title 磁盘信息
+        h3.card-title = t('admin.system_info.disk_usage')
       .card-body
         - unless @disks.blank?
           dl.system-info
@@ -55,12 +55,12 @@
                 pre
                   = "#{number_to_human_size(disk[:bytes_used])} / #{number_to_human_size(disk[:bytes_total])}"
         - else
-          | 硬盘信息无法获取
+          = t('admin.system_info.fail_detect_disk')
 
   .col-md-6
     .card
       .card-header
-        h3.card-title 系统变量
+        h3.card-title = t('admin.system_info.system_enviroment')
       .card-body
         dl.system-info
           - @env.each do |key, value|

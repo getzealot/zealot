@@ -9,15 +9,15 @@
     - if @token
       .card
         .card-header.card-border
-          h3.card-title 激活链接
+          h3.card-title = t('admin.users.active_link')
         .card-body
           input.form-control value="#{confirmation_url(@user, confirmation_token: @token)}" disabled=true
-          small.form-text.text-muted 若发送邮件设置错误或邀请用户没有收到激活邮件，可通过本链接激活。
+          small.form-text.text-muted = t('admin.users.active_link_tip')
     .card
       .card-header.card-border
-        h3.card-title 用户信息
+        h3.card-title = t('admin.users.user_info')
         .card-tools
           a href="#{admin_users_path}"
             i.far.fa-list-alt
-            |  返回列表
+            = t('admin.users.goback_to_list')
       == render 'form'

@@ -1,14 +1,21 @@
 # frozen_string_literal: true
 
 module AppsHelper
+  extend ActionView::Helpers::TranslationHelper
+
   SelectOption = Struct.new(:name, :value)
 
-  DEFAULT_SCHEMES = %w[测试版 内测版 产品版]
-  DEFAULT_CHANNELS = [
-    SelectOption.new('Android 和 iOS', 'both'),
-    SelectOption.new('Android', 'android'),
-    SelectOption.new('iOS', 'ios')
+  DEFAULT_SCHEMES = [
+    t('channels.builtin_scheme_beta'),
+    t('channels.builtin_scheme_adhoc'),
+    t('channels.builtin_scheme_production')
   ]
+
+  DEFAULT_CHANNELS = [
+    SelectOption.new(t('channels.builtin_channel_both'), 'both'),
+    SelectOption.new(t('channels.builtin_channel_android'), 'android'),
+    SelectOption.new(t('channels.builtin_channel_ios'), 'ios')
+  ].freeze
 
   def default_schemes
     DEFAULT_SCHEMES

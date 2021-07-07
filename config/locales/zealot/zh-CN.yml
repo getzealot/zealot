@@ -1,6 +1,39 @@
 zh-CN:
+  menu:
+    function_section: 功能区域
+    dashboard: 控制台
+    apps: 应用管理
+    debug_files: 调试文件管理
+
+    toolbox_section: 工具箱
+    teardown: 文件解析
+    fetch_ios_udid: 获取 iOS 设备 UDID
+
+    admin_section: 管理面板
+    users: 用户管理
+    web_hooks: 网络钩子管理
+    system_settings: 系统设置
+    system_info: 监控
+    enviroments: 环境信息
+    background_jobs: 后台任务
+    database_analytics: 数据库分析
   admin:
+    system_info:
+      server_info: 服务器信息
+      zealot_version:  Zealot 版本
+      found_new_version: '发现新版本: %{version}'
+      ruby_version: Ruby 版本
+      cpu_info: CPU
+      cpu_core: '%{size} 核'
+      fail_detect_cpu: CPU 信息监测失败
+      memory_info: 内存
+      fail_detect_memory: 内存信息监测失败
+      lauched_time: 运行时间
+      disk_usage: 磁盘信息
+      fail_detect_disk: 硬盘信息无法获取
+      system_enviroment: 系统变量
     settings:
+      enable: 开启
       general: 通用配置
       site_title: 站点标题
       site_https: 站点启用 HTTPS
@@ -21,6 +54,99 @@ zh-CN:
       submit:
         create: 新增设置
         update: 更新设置
+    users:
+      new_user: 新建用户
+      user_info: 用户信息
+      goback_to_list: 返回列表
+      number: '#'
+      nickname: 用户昵称
+      email: 邮箱
+      role: 权限
+      status: 状态
+      last_login_time: 最后登录时间
+      action: 操作
+      actived: 已激活
+      unactive: 未激活
+      never_logined: 从未登录
+      destroy_user: 删除
+      destroy_user_confirm: 你确定要删除【%{user}】用户？
+      active_link: 激活链接
+      active_link_tip: 若发送邮件设置错误或邀请用户没有收到激活邮件，可通过本链接激活。
+    web_hooks:
+      number: '#'
+      url: URL
+      channels: 渠道列表
+      action: 操作
+      empty_content: 没有发现网络钩子
+      destroy: 删除
+      destroy_confirm: 你确定？
+  dashboard:
+    my_dashboard: 我的控制台
+    analytics:
+      apps: 应用
+      debug_files: 调试文件
+      teardowns: 文件解析
+      uploads: 上传次数
+      web_hooks: 网络钩子
+      users: 用户
+      background_jobs: 后台任务
+      disk_usage: 空间占用
+    timeline:
+      title: 上传时间线
+      upload_release: 上传了新版本 %{release_version} (%{build_version})
+      not_found: 没有任何上传，快快上传吧。
+
+  apps:
+    apps: 应用管理
+    new_app: 新建应用
+    edit_app: 编辑应用
+    goback_to_app: 返回应用
+    messages:
+      create_app_success: '%{name} 应用已经创建成功！'
+      not_found_app_by_version: '没有找到应用版本: %{version}'
+      not_found_app: 没有找到应用 %{id}，跳转至应用列表
+      delete_app_confirm: 确定删除【%{name}】应用和已关联的类型、渠道以及已上传的应用数据?
+      delete_app_scheme_confirm: 确定删除【%{name}】类型和渠道以及已上传的应用数据?
+      delete_app_channel_confirm: 确定删除【%{name}】渠道和已上传的应用数据?
+    menu:
+      new_scheme: 新增类型
+      edit_app: 编辑应用
+      destroy_app: 删除应用
+      new_channel: 新增渠道
+      edit_scheme: 编辑类型
+      destory_scheme: 删除类型
+    table:
+      apps:
+        type: 类型名称
+        channel_count: 渠道数量
+        new_app_scheme: 还没有任何应用类型和渠道，开始%{link}吧。
+        new_app_scheme_link_title: 创建第一个应用类型和渠道
+        tips:
+          title: 右上角的按钮是本应用的功能区：
+          create_app_scheme_and_channel: 创建应用类型和渠道
+          edit_app_name: 编辑应用名称
+          destroy_app: 删除应用
+      app:
+        not_found_channel_body_html: |
+          没有发现任何渠道，选择右上角的 <i class="far fa-plus-square" /> 新增渠道。
+        emtpy_content_body_html: |
+          <h5>没有发现任何应用类型！</h5>
+          <p>创建应用类型通常是给应用进行分类，比如从研发流程来说可以分为：</p>
+          <ul>
+            <li>开发版本、内测版本、公测版本、线上版本</li>
+          </ul>
+          <p>如果应用仅提供 Android 版本，可以按照应用渠道划分为：</p>
+          <ul>
+            <li>Google Play、酷安、小米、华为、vivo、oppo、应用宝等</li>
+          </ul>
+
+  channels:
+    builtin_scheme_beta: 测试版
+    builtin_scheme_adhoc: 内测版
+    builtin_scheme_production: 产品版
+    builtin_channel_both: Android 和 iOS
+    builtin_channel_android: Android
+    builtin_channel_ios: iOS
 
   datetime:
     distance_in_words:
